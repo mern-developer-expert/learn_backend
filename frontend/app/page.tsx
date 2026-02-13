@@ -8,6 +8,8 @@ export default function Home() {
 
   useEffect(() => {
     // Here I directly call becuse i set route in next.config.ts as proxy router otherwise it will give CORS error
+    // We fetch jokes from the backend via the /api/jokes proxy route
+    // The backend is running on port 4000, but we use the proxy set in next.config.ts
     axios.get('/api/jokes').then((res) => {
       console.log("data", res);
       setJokes(res.data);
