@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema(
 
     email: {
       type: String,
-      required,
+      required: true,
       unique,
       trim: true, // remove extra spaces (good habit)
       // Optional: You can add proper email checking later like this:
@@ -69,5 +69,6 @@ const userSchema = new mongoose.Schema(
 // "User" → name of the collection in MongoDB becomes → "users" (small letter + s)
 
 export const User = mongoose.model("User", userSchema);
+// generallay we give same name as we define variable here "User" and pass in model mongoose.model("User", userSchema);
 
 // for more Validitations you can refer mongoose Validitations docs https://mongoosejs.com/docs/validation.html
